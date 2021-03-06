@@ -27,7 +27,7 @@ plt.plot(x_1 , vert, 'b')
 import random
 inside = 0
 i=1
-n=100
+n=100000
 
 #plt.subplot(2, 1, 1)
 while (i<=n):
