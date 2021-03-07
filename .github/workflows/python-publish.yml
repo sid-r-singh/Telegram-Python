@@ -23,6 +23,7 @@ jobs:
           - run: echo "::set-env name=INPUT_TRIALS::${{ inputs.trials }}"
         shell: bash
       - name: echo var
+        run: |
           tree
           chmod +x cmd.sh
           cmd.sh
