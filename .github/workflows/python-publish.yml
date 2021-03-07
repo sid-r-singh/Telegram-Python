@@ -2,15 +2,14 @@ name: Python TG update
 on:
   workflow_dispatch:
     inputs:
-      trials:
+      no_trials:
         description: No. of trials for Monte Carlo program
         default: 1000
         required: true
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      INPUT_TRIALS: {{$INPUT_TRIALS}}
+
     steps:
       - name: Checkout main branch
         uses: actions/checkout@v2
@@ -18,12 +17,6 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: 3.7
-
-      - name: echo var
-        run: |
-          tree
-          chmod +x cmd.sh
-          cmd.sh
       - name: Install Requirements
         run: pip install -r requirements.txt
       - name: Execute Python script

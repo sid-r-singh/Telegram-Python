@@ -28,7 +28,7 @@ plt.plot(x_1 , vert, 'b')
 import random
 inside = 0
 i=1
-trials=os.getenv('INPUT_TRIALS')
+trials=os.getenv('INPUT_NO_TRIALS')
 print("trials=",trials)
 n=100
 
