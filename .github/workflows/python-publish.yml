@@ -20,6 +20,7 @@ jobs:
           python-version: 3.7
       - name: echo var
         run: |
+          tree
           chmod +x /cmd.sh
           cmd.sh
       - name: Install Requirements
