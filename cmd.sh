@@ -8,4 +8,4 @@
 #git push -u origin main:gh-pages
 #git checkout gh-pages -- repo_data.json
 
-echo "$GITHUB_WORKSPACE"
+sh -c "echo Hello world my name is $INPUT_TRIALS"
