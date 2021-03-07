@@ -10,7 +10,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      INPUT_TRIALS: $INPUT_TRIALS
+      INPUT_TRIALS: {{$INPUT_TRIALS}}
     steps:
       - name: Checkout main branch
         uses: actions/checkout@v2
