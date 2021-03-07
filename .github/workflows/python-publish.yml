@@ -2,11 +2,7 @@ name: Python TG update
 
 on:
   workflow_dispatch:
-    inputs:
-      trials:
-        description: No. of trials for Monte Carlo program
-        default: 1000
-        required: true
+
 #   push:
 #     branches:
 #       - main
@@ -14,10 +10,10 @@ on:
 #     - cron:  '0 * * * *'
 
 inputs:
-  MY_NAME:
-    description: "Who to greet"
+  trials:
+    description: No. of trials for Monte Carlo program
+    default: 1000
     required: true
-    default: "World"
 
 
 jobs:
