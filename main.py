@@ -31,7 +31,7 @@ i=1
 trials=os.getenv('INPUT_NO_TRIALS')
 print("trials=",trials)
 #print("GH Wokspace",os.getenv(GITHUB_WORKSPACE))
-n=100
+n=int(trials)
 
 #plt.subplot(2, 1, 1)
 while (i<=n):
