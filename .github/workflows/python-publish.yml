@@ -1,45 +1,34 @@
 name: Python TG update
-
 on:
   workflow_dispatch:
-
-#   push:
-#     branches:
-#       - main
-#   schedule:
-#     - cron:  '0 * * * *'
-
-inputs:
-  trials:
-    description: No. of trials for Monte Carlo program
-    default: 1000
-    required: true
-
-
-jobs:
-
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout main branch
-        uses: actions/checkout@v2
-      - name: Setup Python Environment
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.7
-      - name: echo var
-        run: |
-          chmod +x cmd.sh
-          cmd.sh
-      - name: Install Requirements
-        run: pip install -r requirements.txt
-      - name: Execute Python script
-        run: |
-          python main.py
-      - name: Send updates over TG
-        run: |
-          curl -X POST \
-          -H 'Content-Type: application/json' \
-          -d '{"chat_id": ${{ secrets.TG_BOT_CHAT_ID }}, "text": "🌟 Python program Update 👇"}' \
-          https://api.telegram.org/bot${{ secrets.TG_BOT_TOKEN }}/sendMessage
-          curl -F document=@"plot.png" https://api.telegram.org/bot${{ secrets.TG_BOT_TOKEN }}/sendDocument?chat_id=${{ secrets.TG_BOT_CHAT_ID }}
+    inputs:
+      trials:
+        description: No. of trials for Monte Carlo program
+        default: 1000
+        required: true
+    jobs:
+      build:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Checkout main branch
+            uses: actions/checkout@v2
+          - name: Setup Python Environment
+            uses: actions/setup-python@v2
+            with:
+              python-version: 3.7
+          - name: echo var
+            run: |
+              chmod +x cmd.sh
+              cmd.sh
+          - name: Install Requirements
+            run: pip install -r requirements.txt
+          - name: Execute Python script
+            run: |
+              python main.py
+          - name: Send updates over TG
+            run: |
+              curl -X POST \
+              -H 'Content-Type: application/json' \
+              -d '{"chat_id": ${{ secrets.TG_BOT_CHAT_ID }}, "text": "🌟 Python program Update 👇"}' \
+              https://api.telegram.org/bot${{ secrets.TG_BOT_TOKEN }}/sendMessage
+              curl -F document=@"plot.png" https://api.telegram.org/bot${{ secrets.TG_BOT_TOKEN }}/sendDocument?chat_id=${{ secrets.TG_BOT_CHAT_ID }}
