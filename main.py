@@ -29,7 +29,8 @@ import random
 inside = 0
 i=1
 trials=os.getenv('INPUT_TRIALS')
-n=int(trials)
+print("trials=",trials)
+n=100
 
 #plt.subplot(2, 1, 1)
 while (i<=n):
