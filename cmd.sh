@@ -8,4 +8,4 @@
 #git push -u origin main:gh-pages
 #git checkout gh-pages -- repo_data.json
 
-sh -c "echo Hello world my name is ${INPUT_TRIALS}"
+sh -c "echo Hello world my name is ${INPUT_NO_TRIALS}"
