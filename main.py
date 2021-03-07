@@ -64,8 +64,8 @@ x = np.array([0,0,3,3])
 y = np.array([10,40,40,10])
 textstr="""Program info
 Value of pi is:  %1.5f
-No. of points: {readable_trials}
-Exec. time:  %3.1fs"""%(pi,diff)
+No. of points: %s
+Exec. time:  %3.1fs"""%(pi,readable_trials,diff)
 plt.xticks([])
 plt.yticks([])
 plt.text(0.5,30,textstr, verticalalignment="top")
