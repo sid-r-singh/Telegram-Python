@@ -28,7 +28,8 @@ plt.plot(x_1 , vert, 'b')
 import random
 inside = 0
 i=1
-n=os.environ.get('INPUT_TRIALS')
+trials=os.environ.get('INPUT_TRIALS')
+n=int(trials)
 
 #plt.subplot(2, 1, 1)
 while (i<=n):
