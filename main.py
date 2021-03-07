@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 import matplotlib.gridspec as gridspec
 from time import time
 import os
+from numerize import numerize  
 
 # Plot figure with subplots of different sizes
 fig = plt.figure(1)
@@ -32,6 +33,7 @@ trials=os.getenv('INPUT_NO_TRIALS')
 print("trials=",trials)
 #print("GH Wokspace",os.getenv(GITHUB_WORKSPACE))
 n=int(trials)
+readable_trials = numerize.numerize(n, 2)
 
 #plt.subplot(2, 1, 1)
 while (i<=n):
@@ -62,8 +64,8 @@ x = np.array([0,0,3,3])
 y = np.array([10,40,40,10])
 textstr="""Program info
 Value of pi is:  %1.5f
-No. of points: %1.0f
-Exec. time:  %3.1fs"""%(pi,n,diff)
+No. of points: {readable_trials}
+Exec. time:  %3.1fs"""%(pi,diff)
 plt.xticks([])
 plt.yticks([])
 plt.text(0.5,30,textstr, verticalalignment="top")
