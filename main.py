@@ -2,6 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.gridspec as gridspec
 from time import time
+import os
 
 # Plot figure with subplots of different sizes
 fig = plt.figure(1)
@@ -27,7 +28,7 @@ plt.plot(x_1 , vert, 'b')
 import random
 inside = 0
 i=1
-n=100000
+n=os.environ.get('trials')
 
 #plt.subplot(2, 1, 1)
 while (i<=n):
