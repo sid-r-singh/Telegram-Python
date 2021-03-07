@@ -1,7 +1,6 @@
 name: Python TG update
 on:
-  repository_dispatch:
-  types: usual
+  workflow_dispatch:
     inputs:
       no_trials:
         description: No. of trials for Monte Carlo program
