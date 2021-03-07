@@ -8,4 +8,4 @@
 #git push -u origin main:gh-pages
 #git checkout gh-pages -- repo_data.json
 
-echo "$INPUT_TRIALS"
+echo "$GITHUB_WORKSPACE"
