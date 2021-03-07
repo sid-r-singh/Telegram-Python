@@ -6,6 +6,10 @@ on:
         description: No. of trials for Monte Carlo program
         default: 1000
         required: true
+
+env:
+  INPUT_NO_TRIALS: ${{ github.event.inputs.no_trials }}
+
 jobs:
   build:
     runs-on: ubuntu-latest
