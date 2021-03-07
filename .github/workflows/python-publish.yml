@@ -18,10 +18,7 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: 3.7
-      - name: set var
-        run: |
-          - run: echo "::set-env name=INPUT_TRIALS::${{ inputs.trials }}"
-        shell: bash
+
       - name: echo var
         run: |
           tree
