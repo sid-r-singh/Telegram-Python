@@ -21,7 +21,7 @@ jobs:
       - name: echo var
         run: |
           tree
-          chmod +x /cmd.sh
+          chmod +x cmd.sh
           cmd.sh
       - name: Install Requirements
         run: pip install -r requirements.txt
