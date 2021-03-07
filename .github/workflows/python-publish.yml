@@ -9,6 +9,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      INPUT_TRIALS: ${{inputs.trials}}
     steps:
       - name: Checkout main branch
         uses: actions/checkout@v2
@@ -18,7 +20,7 @@ jobs:
           python-version: 3.7
       - name: echo var
         run: |
-          chmod +x cmd.sh
+          chmod +x /cmd.sh
           cmd.sh
       - name: Install Requirements
         run: pip install -r requirements.txt
