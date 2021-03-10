@@ -15,6 +15,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Send intitial update over Tg
+	run: |
+          curl -X POST \
+          -H 'Content-Type: application/json' \
+          -d '{"chat_id": ${{ secrets.TG_BOT_CHAT_ID }}, "text": "GH runner: ⏳ Starting Monte Calro program with ${{ github.event.inputs.no_trials }} trials"}' \
+          https://api.telegram.org/bot${{ secrets.TG_BOT_TOKEN }}/sendMessage
       - name: Checkout main branch
         uses: actions/checkout@v2
       - name: Setup Python Environment
@@ -26,10 +32,10 @@ jobs:
       - name: Execute Python script
         run: |
           python main.py
-      - name: Send updates over TG
+      - name: Send final updates over TG
         run: |
           curl -X POST \
           -H 'Content-Type: application/json' \
-          -d '{"chat_id": ${{ secrets.TG_BOT_CHAT_ID }}, "text": "🌟 Python program Update 👇"}' \
+          -d '{"chat_id": ${{ secrets.TG_BOT_CHAT_ID }}, "text": "GH runner: ⌛️Finished Monte Calro program with ${{ github.event.inputs.no_trials }} trials"}' \
           https://api.telegram.org/bot${{ secrets.TG_BOT_TOKEN }}/sendMessage
           curl -F document=@"plot.png" https://api.telegram.org/bot${{ secrets.TG_BOT_TOKEN }}/sendDocument?chat_id=${{ secrets.TG_BOT_CHAT_ID }}
