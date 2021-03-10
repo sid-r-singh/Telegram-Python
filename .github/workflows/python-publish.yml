@@ -16,7 +16,7 @@ jobs:
 
     steps:
       - name: Send intitial update over Tg
-	run: |
+        run: |
           curl -X POST \
           -H 'Content-Type: application/json' \
           -d '{"chat_id": ${{ secrets.TG_BOT_CHAT_ID }}, "text": "GH runner: ⏳ Starting Monte Calro program with ${{ github.event.inputs.no_trials }} trials"}' \
