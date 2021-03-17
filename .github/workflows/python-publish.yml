@@ -6,7 +6,10 @@ on:
         description: No. of trials for Monte Carlo program
         default: 1000
         required: true
-
+      user_chat_id:
+        description: Chat ID of TG user
+        default: ${{ secrets.TG_BOT_CHAT_ID }}
+        required: true
 env:
   INPUT_NO_TRIALS: ${{ github.event.inputs.no_trials }}
 
