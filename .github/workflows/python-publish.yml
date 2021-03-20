@@ -8,7 +8,7 @@ on:
         required: true
       user_chat_id:
         description: Chat ID of TG user
-        default: ${{ secrets.TG_BOT_CHAT_ID }}
+        default: 000000
         required: true
 env:
   INPUT_NO_TRIALS: ${{ github.event.inputs.no_trials }}
@@ -22,7 +22,7 @@ jobs:
         run: |
           curl -X POST \
           -H 'Content-Type: application/json' \
-          -d '{"chat_id": ${{ secrets.TG_BOT_CHAT_ID }}, "text": "GH runner: ⏳ Starting Monte Calro program with ${{ github.event.inputs.no_trials }} trials"}' \
+          -d '{"chat_id": ${{ github.event.inputs.user_chat_id }}, "text": "GH runner: ⏳ Starting Monte Calro program with ${{ github.event.inputs.no_trials }} trials"}' \
           https://api.telegram.org/bot${{ secrets.TG_BOT_TOKEN }}/sendMessage
       - name: Checkout main branch
         uses: actions/checkout@v2
@@ -39,6 +39,6 @@ jobs:
         run: |
           curl -X POST \
           -H 'Content-Type: application/json' \
-          -d '{"chat_id": ${{ secrets.TG_BOT_CHAT_ID }}, "text": "GH runner: ⌛️Finished Monte Calro program with ${{ github.event.inputs.no_trials }} trials"}' \
+          -d '{"chat_id": ${{ github.event.inputs.user_chat_id }}, "text": "GH runner: ⌛️Finished Monte Calro program with ${{ github.event.inputs.no_trials }} trials"}' \
           https://api.telegram.org/bot${{ secrets.TG_BOT_TOKEN }}/sendMessage
           curl -F document=@"plot.png" https://api.telegram.org/bot${{ secrets.TG_BOT_TOKEN }}/sendDocument?chat_id=${{ secrets.TG_BOT_CHAT_ID }}
