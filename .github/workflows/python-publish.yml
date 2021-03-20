@@ -8,7 +8,7 @@ on:
         required: true
       user_chat_id:
         description: Chat ID of TG user
-        default: 10 digit ID
+        default: ${{ secrets.TG_BOT_CHAT_ID }}
         required: true
 env:
   INPUT_NO_TRIALS: ${{ github.event.inputs.no_trials }}
