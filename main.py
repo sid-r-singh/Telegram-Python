@@ -73,7 +73,7 @@ plt.scatter(x,y,alpha=0.2, edgecolors='none', s=30,)
 
 
 fig.tight_layout()
-fig.set_size_inches(w=10,h=5)
+fig.set_size_inches(w=10,h=4)
 fig_name = 'plot.png'
 fig.savefig(fig_name)
 plt.show()
