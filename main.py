@@ -56,7 +56,7 @@ line_labels = ["Item A", "Item B", "Item C"]
 
 #plot 2:
 # small subplot 1
-plt.subplot2grid((3,3), (0,2))
+plt.subplot2grid((3,3), (0,3))
 plt.locator_params(axis='x', nbins=7)
 plt.locator_params(axis='y', nbins=7)
 
@@ -73,7 +73,7 @@ plt.scatter(x,y,alpha=0.2, edgecolors='none', s=30,)
 
 
 fig.tight_layout()
-fig.set_size_inches(w=11,h=7)
+fig.set_size_inches(w=10,h=5)
 fig_name = 'plot.png'
 fig.savefig(fig_name)
 plt.show()
