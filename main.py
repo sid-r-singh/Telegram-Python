@@ -57,8 +57,8 @@ line_labels = ["Item A", "Item B", "Item C"]
 #plot 2:
 # small subplot 1
 plt.subplot2grid((3,3), (0,2))
-plt.locator_params(axis='x', nbins=5)
-plt.locator_params(axis='y', nbins=5)
+plt.locator_params(axis='x', nbins=7)
+plt.locator_params(axis='y', nbins=7)
 
 x = np.array([0,0,3,3])
 y = np.array([10,40,40,10])
