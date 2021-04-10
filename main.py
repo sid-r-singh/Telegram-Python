@@ -63,7 +63,7 @@ plt.locator_params(axis='y', nbins=5)
 x = np.array([0,0,3,3])
 y = np.array([10,40,40,10])
 textstr="""Program info
-Value of pi is:  %1.5f
+Value of pi is:  %1.13f
 No. of points: %s
 Exec. time:  %3.1fs"""%(pi,readable_trials,diff)
 plt.xticks([])
