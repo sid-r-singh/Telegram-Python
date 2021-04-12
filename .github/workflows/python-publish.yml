@@ -71,7 +71,7 @@ jobs:
           https://api.telegram.org/bot${{ secrets.PUBLIC_TG_BOT_TOKEN }}/sendMessage
           curl \
           -F "chat_id=${{ github.event.inputs.user_chat_id }}" \
-          -F "text=I posted the results under the anonymous name <b>${{ github.event.inputs.user_name_ano }}</b> in this <a href='https://t.me/scientifc_computation'>channel</a> ▶️ You can see the results there.
+          -F "text=I posted the results under the anonymous name <b>${{ github.event.inputs.user_name_ano }}</b> in this <a href='https://t.me/scientifc_computation'>channel ▶️</a> You can see the results there.
           See you next time !" \
           -F "parse_mode=HTML" \
           https://api.telegram.org/bot${{ secrets.PUBLIC_TG_BOT_TOKEN }}/sendMessage
