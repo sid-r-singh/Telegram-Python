@@ -26,12 +26,12 @@ jobs:
           # Admin text update
           curl -X POST \
           -H 'Content-Type: application/json' \
-          -d '{"chat_id": ${{ github.event.inputs.user_chat_id }}, "text": "GH runner: ⏳ Starting Monte Calro program with ${{ github.event.inputs.no_trials }} trials"}' \
+          -d '{"chat_id": ${{ github.event.inputs.user_chat_id }}, "text": "GH runner: ⏳ Started Monte Calro program with ${{ github.event.inputs.no_trials }} trials"}' \
           https://api.telegram.org/bot${{ secrets.TG_BOT_TOKEN }}/sendMessage
           #User info update
           curl -X POST \
           -H 'Content-Type: application/json' \
-          -d '{"chat_id": ${{ github.event.inputs.user_chat_id }}, "text": "Starting Monte Calro program with ${{ github.event.inputs.no_trials }} trials ⏳"}' \
+          -d '{"chat_id": ${{ github.event.inputs.user_chat_id }}, "text": "Started Monte Calro program with ${{ github.event.inputs.no_trials }} trials ⏳"}' \
           https://api.telegram.org/bot${{ secrets.PUBLIC_TG_BOT_TOKEN }}/sendMessage
 
       - name: Checkout main branch
